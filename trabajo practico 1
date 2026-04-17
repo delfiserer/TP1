@@ -17,6 +17,60 @@ else:
 
 monto = monto_base + fijo + extra_letra
 
+# DETERMINACIÓN DEL CAPÍTULO
+num = int(codigo[1]) * 10 + int(codigo[2])
+
+if letra == 'A' or letra == 'a' or letra == 'B' or letra == 'b':
+    capitulo = "Capítulo I: Ciertas enfermedades infecciosas y parasitarias"
+elif letra == 'C' or letra == 'c' or ((letra == 'D' or letra == 'd') and num <= 48):
+    capitulo = "Capítulo II: Tumores [neoplasias]"
+elif letra == 'D' or letra == 'd':
+    capitulo = "Capítulo III: Enfermedades de la sangre y de los órganos hematopoyéticos, y ciertos trastornos que afectan el mecanismo de la inmunidad"
+elif letra == 'E' or letra == 'e':
+    capitulo = "Capítulo IV: Enfermedades endocrinas, nutricionales y metabólicas"
+elif letra == 'F' or letra == 'f':
+    capitulo = "Capítulo V: Trastornos mentales y del comportamiento"
+elif letra == 'G' or letra == 'g':
+    capitulo = "Capítulo VI: Enfermedades del sistema nervioso"
+elif letra == 'H' or letra == 'h':
+    if num <= 59:
+        capitulo = "Capítulo VII: Enfermedades del ojo y sus anexos"
+    else:
+        capitulo = "Capítulo VIII: Enfermedades del oído y de la apófisis mastoides"
+elif letra == 'I' or letra == 'i':
+    capitulo = "Capítulo IX: Enfermedades del sistema circulatorio"
+elif letra == 'J' or letra == 'j':
+    capitulo = "Capítulo X: Enfermedades del sistema respiratorio"
+elif letra == 'K' or letra == 'k':
+    capitulo = "Capítulo XI: Enfermedades del sistema digestivo"
+elif letra == 'L' or letra == 'l':
+    capitulo = "Capítulo XII: Enfermedades de la piel y del tejido subcutáneo"
+elif letra == 'M' or letra == 'm':
+    capitulo = "Capítulo XIII: Enfermedades del sistema osteomuscular y del tejido conjuntivo"
+elif letra == 'N' or letra == 'n':
+    capitulo = "Capítulo XIV: Enfermedades del sistema genitourinario"
+elif letra == 'O' or letra == 'o':
+    capitulo = "Capítulo XV: Embarazo, parto y puerperio"
+elif letra == 'P' or letra == 'p':
+    capitulo = "Capítulo XVI: Ciertas afecciones originadas en el período perinatal"
+elif letra == 'Q' or letra == 'q':
+    capitulo = "Capítulo XVII: Malformaciones congénitas, deformidades y anomalías cromosómicas"
+elif letra == 'R' or letra == 'r':
+    capitulo = "Capítulo XVIII: Síntomas, signos y hallazgos anormales clínicos y de laboratorio, no clasificados en otra parte"
+elif letra == 'S' or letra == 's' or letra == 'T' or letra == 't':
+    capitulo = "Capítulo XIX: Traumatismos, envenenamientos y algunas otras consecuencias de causas externas"
+elif letra == 'V' or letra == 'v' or letra == 'W' or letra == 'w' or letra == 'X' or letra == 'x' or letra == 'Y' or letra == 'y':
+    capitulo = "Capítulo XX: Causas externas de morbilidad y de mortalidad"
+elif letra == 'Z' or letra == 'z':
+    capitulo = "Capítulo XXI: Factores que influyen en el estado de salud y contacto con los servicios de salud"
+elif letra == 'U' or letra == 'u':
+    capitulo = "Capítulo XXII: Códigos para propósitos especiales"
+else:
+    capitulo = "Capítulo desconocido"
+
+
+
+
 #Resultados
 print('Nombre del beneficiario :', beneficiario)
 print('Codigo ICD10 de la enfermedad: ', codigo)
