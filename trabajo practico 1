@@ -6,6 +6,16 @@ monto_base = int(input('Ingrese el monto base: '))
 letra = codigo[0]
 fijo = 25000
 
+suma = monto_base + fijo + extra_letra
+
+if len(codigo) >= 6:
+    porcentaje = int(codigo[4] + codigo[5])
+else:
+    porcentaje = int(codigo[4])
+
+porcentaje = porcentaje/100+1
+monto = suma * porcentaje
+
 #Condicional segun la letra
 
 if (letra >= 'A' and letra <= 'L') or (letra >= 'a' and letra <= 'l'):
