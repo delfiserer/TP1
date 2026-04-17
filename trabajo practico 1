@@ -1,3 +1,18 @@
-#17_04
+beneficiario = str(input('Nombre del beneficiario: '))
+codigo = str(input('Ingrese codigo ICD10 de la enfermedad: '))
+monto_base = int(input('Ingrese el monto base: '))
 
-print('Hola caca')
+# Calculo del monto final
+letra = codigo[0]
+fijo = 25000
+
+#Condicional segun la letra
+
+if (letra >= 'A' and letra <= 'L') or (letra >= 'a' and letra <= 'l'):
+    extra_letra = 25_000
+elif letra == 'U' or letra == 'u':
+    extra_letra = 100_000
+else:
+    extra_letra = 40_000
+
+suma = monto_base + fijo + extra_letra
